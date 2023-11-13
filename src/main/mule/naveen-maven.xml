@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="1ca03310-984b-48ce-bb83-e4f2d5fa9e21" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="naveen-mavenFlow" doc:id="96769b82-62f8-4a27-8c32-7111920760ca" >
+		<http:listener doc:name="Listener" doc:id="53a4d833-2919-4dc8-ae44-3433dad8e99e" config-ref="HTTP_Listener_config" path="/naveen"/>
+		<logger level="INFO" doc:name="Logger" doc:id="6bec3763-550c-4db1-8a39-715345de14e3" message="#[payload]"/>
+		<ee:transform doc:name="Transform Message" doc:id="bf0e8c48-bb7d-4093-9b85-4d4f553ee220" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	"timeanddate" :now()
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+</mule>
