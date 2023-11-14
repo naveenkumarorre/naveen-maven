@@ -34,7 +34,7 @@
                           <uri>https://anypoint.mulesoft.com</uri>
                             <muleVersion>4.4.0</muleVersion>
                              <username>naveenkumarorre</username>
-<password>Naveenkumar@9542</password>
+                            <password>Naveenkumar@9542</password>
 <environment>Sandbox</environment>
 <applicationName>naveen-maven</applicationName>
 <workers>1</workers>
