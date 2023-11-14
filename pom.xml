@@ -20,9 +20,9 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
+		        <groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-clean-plugin</artifactId>
-				<version>3.8.4</version>
+				<version>3.2.0</version>
 			</plugin>
 			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
@@ -35,14 +35,14 @@
                             <muleVersion>4.4.0</muleVersion>
                              <username>naveenkumarorre</username>
                             <password>Naveenkumar@9542</password>
-<environment>Sandbox</environment>
-<applicationName>naveen-maven</applicationName>
-<workers>1</workers>
-<workerType>Micro</workerType>
-<objectStoreV2>true</objectStoreV2>
-</cloudHubDeployment>
-<classifier>mule-application</classifier>
-</configuration>
+                             <environment>Sandbox</environment>
+                             <applicationName>naveen-maven</applicationName>
+                             <workers>1</workers>
+                              <workerType>Micro</workerType>
+                               <objectStoreV2>true</objectStoreV2>
+                               </cloudHubDeployment>
+                               <classifier>mule-application</classifier>
+                                </configuration>
 				
 			</plugin>
 		</plugins>
